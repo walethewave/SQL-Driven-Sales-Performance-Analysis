@@ -61,7 +61,7 @@ Each approach leverages SQL functions and clauses to aggregate and analyze data 
 ### Generic Questions
 1. What is the total revenue generated from each product line in a specific city for a given date range? This question requires you to aggregate data by product line and city while filtering transactions within a specific date range. You'll need to calculate the total revenue for each product line.
 2. How does customer satisfaction (rating) vary by gender for different branches? This question involves grouping data by branch and gender, then calculating the average customer satisfaction rating for each group. It allows you to analyze the relationship between gender and customer satisfaction across different branches.
-3. What is the average gross margin percentage for transactions made by regular customers compared to new customers? This question requires you to group data by customer type and calculate the average gross margin percentage for each group. It allows you to understand if there's a difference in profitability between regular and new customers.
+3. What is the average gross margin percentage for transactions made by member customers compared to normal customers? This question requires you to group data by customer type and calculate the average gross margin percentage for each group. It allows you to understand if there's a difference in profitability between regular and new customers.
 
 ### Product Questions
 Business questions based on "Product Line" attribute that can be answered using SQL with the provided dataset:
@@ -73,7 +73,7 @@ Business questions based on "Product Line" attribute that can be answered using 
 6. What is the total cost of goods sold (COGS) for each product line?
 7. Which product lines have the highest and lowest average gross margin percentages?
 8. How does the quantity sold for each product line vary throughout the week?
-9. What is the revenue trend for each product line over the past six months?
+9. What is the revenue trend for each product line over the past three months?
 10. How does customer satisfaction (rating) correlate with the purchase of specific product lines?
 11. Which payment methods are most commonly used for purchasing each product line?
 12. How does the average unit price of each product line change over time?
@@ -89,7 +89,7 @@ Business questions based on sales that can be answered using SQL with the provid
 7. Which branch has the highest total tax collected?
 8. How does the distribution of payment methods vary between product lines?
 9. What is the total revenue generated on a specific date?
-10. How does the gross margin percentage differ between regular and new customers?
+10. How does the gross margin percentage differ between member and normal customers?
 11. What is the average rating given by customers for each product line?
 12. How does the quantity sold vary throughout the day?
 
@@ -107,4 +107,6 @@ Business questions that a customer can ask, which can be answered using SQL with
 10. What was the highest and lowest rated purchase I made?
 11. How many units of each product did I purchase in total?
 12. Can you provide a summary of my purchases by customer type and gender?
+13. What are the total purchases, grouped by product line and tax percentage, and sorted by the total purchases?
+14. What is the total cost of goods sold (COGS) for each product line?
 These questions allow customers to gain insights into their purchasing behavior, expenditure patterns, product preferences, and overall satisfaction with their transactions. By leveraging SQL, these questions can be answered efficiently using the provided attributes.
