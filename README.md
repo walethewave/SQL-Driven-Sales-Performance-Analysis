@@ -1,5 +1,5 @@
-# Super-Market-Sales-using-SQL
-# Super Market Sales: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data
+# SQL-Driven Sales Performance Analysis
+# SQL-Driven Sales Performance Analysis: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data
 ## About Dataset
 Here's a brief description of each of the attributes or labels in the dataset:
 1. **Invoice ID:** A unique identifier for each invoice or transaction.
@@ -111,12 +111,12 @@ Business questions that a customer can ask, which can be answered using SQL with
 These questions allow customers to gain insights into their purchasing behavior, expenditure patterns, product preferences, and overall satisfaction with their transactions. By leveraging SQL, these questions can be answered efficiently using the provided attributes.
 
 Overview:
-This script generates a README.md file providing insights gained from the "Super Market Sales: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data" project. The insights highlight the project's significance for sales professionals and its usefulness in optimizing sales strategies and driving revenue growth.
+This script generates a README.md file providing insights gained from the "SQL-Driven Sales Performance Analysis: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data" project. The insights highlight the project's significance for sales professionals and its usefulness in optimizing sales strategies and driving revenue growth.
 
 s
 
 ## Overview
-The "Super Market Sales: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data" project has provided valuable insights into consumer behavior, market trends, and sales performance. These insights are essential for sales professionals seeking to optimize sales strategies, improve customer satisfaction, and drive revenue growth in the competitive retail environment.
+The SQL-Driven Sales Performance Analysiss: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data" project has provided valuable insights into consumer behavior, market trends, and sales performance. These insights are essential for sales professionals seeking to optimize sales strategies, improve customer satisfaction, and drive revenue growth in the competitive retail environment.
 
 ## Insights Gained
 
@@ -136,6 +136,6 @@ The "Super Market Sales: Unveiling Consumer Behavior and Retail Trends through S
    - The project enhances business intelligence by providing actionable insights into consumer behavior, market trends, and competitive dynamics. This insight enables sales teams to adapt quickly to changing market conditions, capitalize on emerging trends, and stay ahead of the competition.
 
 ## Conclusion
-The "Super Market Sales" project demonstrates the power of data analytics in uncovering actionable insights, driving sales performance, and enhancing business success. By leveraging data-driven insights, sales professionals can optimize sales strategies, improve customer satisfaction, and achieve sustainable growth in today's competitive marketplace.
+The SQL-Driven Sales Performance Analysis project demonstrates the power of data analytics in uncovering actionable insights, driving sales performance, and enhancing business success. By leveraging data-driven insights, sales professionals can optimize sales strategies, improve customer satisfaction, and achieve sustainable growth in today's competitive marketplace.
 
 """
