@@ -1,141 +1,120 @@
-# SQL-Driven Sales Performance Analysis
-# SQL-Driven Sales Performance Analysis: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data
-## About Dataset
-Here's a brief description of each of the attributes or labels in the dataset:
-1. **Invoice ID:** A unique identifier for each invoice or transaction.
-2. **Branch:** The branch or location where the transaction occurred.
-3. **City:** The city where the branch is located.
-4. **Customer Type:** Indicates whether the customer is a regular or new customer.
-5. **Gender:** The gender of the customer.
-6. **Product Line:** The category or type of product purchased.
-7. **Unit Price:** The price of a single unit of the product.
-8. **Quantity:** The number of units of the product purchased.
-9. **Tax 5%:** The amount of tax (5% of the total cost) applied to the transaction.
-10. **Total:** The total cost of the transaction, including tax.
-11. **Date:** The date when the transaction took place.
-12. **Time:** The time of day when the transaction occurred.
-13. **Payment:** The payment method used (e.g., credit card, cash).
-14. **COGS (Cost of Goods Sold):** The direct costs associated with producing or purchasing the products sold.
-15. **Gross Margin Percentage:** The profit margin percentage for the transaction.
-16. **Gross Income:** The total profit earned from the transaction.
-17. **Rating:** Customer satisfaction rating or feedback on the transaction.
 
-## Analyst List
-Certainly! Here are three analyst tasks that can be accomplished using SQL:
+# **SQL-Driven Sales Performance Analysis**
 
-1. **Top Selling Products by Revenue:** This task involves identifying the top-selling products based on revenue generated. This query calculates the total revenue for each product line by summing up the total transaction amounts and then orders the results in descending order of revenue.
+## **Overview**
+This project leverages **SQL** and **data analytics** to uncover **consumer behavior** and **retail trends** using supermarket sales data. By analyzing key metrics such as revenue, customer satisfaction, and product performance, this project provides actionable insights to optimize sales strategies, improve customer satisfaction, and drive revenue growth.
 
-2. **Monthly Revenue Trend Analysis:** This task aims to analyze the trend of revenue over different months. This query groups the data by the year and month of the transaction date, calculates the total revenue for each month, and orders the results chronologically.
+---
 
-3. **Customer Satisfaction Analysis by Gender and Customer Type:** This task involves analyzing customer satisfaction ratings based on gender and customer type. This query calculates the average rating for each combination of gender and customer type, providing insights into how satisfaction varies across different demographics.
+## **Key Objectives**
+1. **Identify Top-Selling Products**: Determine the best-performing products by revenue.
+2. **Analyze Revenue Trends**: Track monthly revenue trends to understand seasonal variations.
+3. **Evaluate Customer Satisfaction**: Assess customer satisfaction by gender and customer type.
+4. **Optimize Sales Strategies**: Use data-driven insights to enhance sales performance.
 
-### Approach Used
-Certainly! Let's break down the approaches used for each of the analyst tasks using SQL:
+---
 
-1. **Top Selling Products by Revenue:**
-   - **Approach:**
-     - Use the `SELECT` statement to retrieve the product line and the total revenue.
-     - Utilize the `SUM()` function to calculate the total revenue for each product line.
-     - Group the results by the product line using the `GROUP BY` clause.
-     - Order the results in descending order of revenue using the `ORDER BY` clause.
+## **Dataset Overview**
+The dataset includes the following attributes:
+- **Invoice ID**: Unique identifier for each transaction.
+- **Branch**: Location of the transaction.
+- **City**: City where the branch is located.
+- **Customer Type**: Regular or new customer.
+- **Gender**: Gender of the customer.
+- **Product Line**: Category of the product purchased.
+- **Unit Price**: Price per unit of the product.
+- **Quantity**: Number of units purchased.
+- **Tax 5%**: Tax applied to the transaction.
+- **Total**: Total cost of the transaction (including tax).
+- **Date**: Date of the transaction.
+- **Time**: Time of the transaction.
+- **Payment**: Payment method used (e.g., credit card, cash).
+- **COGS (Cost of Goods Sold)**: Direct costs of the products sold.
+- **Gross Margin Percentage**: Profit margin percentage.
+- **Gross Income**: Total profit from the transaction.
+- **Rating**: Customer satisfaction rating.
 
-2. **Monthly Revenue Trend Analysis:**
-   - **Approach:**
-     - Utilize the `DATE_FORMAT()` function to extract the year and month from the transaction date.
-     - Use the `SELECT` statement to retrieve the formatted date and the total revenue.
-     - Apply the `SUM()` function to calculate the total revenue for each month.
-     - Group the results by the formatted date using the `GROUP BY` clause.
-     - Order the results chronologically using the `ORDER BY` clause.
+---
 
-3. **Customer Satisfaction Analysis by Gender and Customer Type:**
-   - **Approach:**
-     - Use the `SELECT` statement to retrieve the gender, customer type, and average rating.
-     - Utilize the `AVG()` function to calculate the average rating for each combination of gender and customer type.
-     - Group the results by gender and customer type using the `GROUP BY` clause.
+## **Analyst Tasks**
+### **1. Top-Selling Products by Revenue**
+- **Objective**: Identify the top-selling products based on revenue.
+- **SQL Approach**:
+  ```sql
+  SELECT Product_Line, SUM(Total) AS Revenue
+  FROM SalesData
+  GROUP BY Product_Line
+  ORDER BY Revenue DESC;
+  ```
 
-Each approach leverages SQL functions and clauses to aggregate and analyze data according to the specific requirements of the analyst tasks.
+### **2. Monthly Revenue Trend Analysis**
+- **Objective**: Analyze revenue trends over time.
+- **SQL Approach**:
+  ```sql
+  SELECT DATE_FORMAT(Date, '%Y-%m') AS Month, SUM(Total) AS Revenue
+  FROM SalesData
+  GROUP BY Month
+  ORDER BY Month;
+  ```
 
-## Business Questions to Answer
+### **3. Customer Satisfaction Analysis by Gender and Customer Type**
+- **Objective**: Evaluate customer satisfaction by demographic.
+- **SQL Approach**:
+  ```sql
+  SELECT Gender, Customer_Type, AVG(Rating) AS Avg_Rating
+  FROM SalesData
+  GROUP BY Gender, Customer_Type;
+  ```
 
-### Generic Questions
-1. What is the total revenue generated from each product line in a specific city for a given date range? This question requires you to aggregate data by product line and city while filtering transactions within a specific date range. You'll need to calculate the total revenue for each product line.
-2. How does customer satisfaction (rating) vary by gender for different branches? This question involves grouping data by branch and gender, then calculating the average customer satisfaction rating for each group. It allows you to analyze the relationship between gender and customer satisfaction across different branches.
-3. What is the average gross margin percentage for transactions made by member customers compared to normal customers? This question requires you to group data by customer type and calculate the average gross margin percentage for each group. It allows you to understand if there's a difference in profitability between regular and new customers.
+---
 
-### Product Questions
-Business questions based on "Product Line" attribute that can be answered using SQL with the provided dataset:
-1. What are the top three best-selling product lines by revenue?
-2. How does the quantity sold for each product line compare to the previous month?
-3. What is the average unit price for each product line?
-4. Which product line has the highest gross income?
-5. How does the tax amount collected for each product line vary across different branches?
-6. What is the total cost of goods sold (COGS) for each product line?
-7. Which product lines have the highest and lowest average gross margin percentages?
-8. How does the quantity sold for each product line vary throughout the week?
-9. What is the revenue trend for each product line over the past three months?
-10. How does customer satisfaction (rating) correlate with the purchase of specific product lines?
-11. Which payment methods are most commonly used for purchasing each product line?
-12. How does the average unit price of each product line change over time?
+## **Key Insights**
+1. **Top-Selling Products**:
+   - Identified the **top 3 product lines** by revenue, enabling targeted marketing and inventory management.
+2. **Revenue Trends**:
+   - Uncovered **seasonal patterns** in sales, helping to anticipate demand fluctuations.
+3. **Customer Satisfaction**:
+   - Found that **female customers** and **regular customers** tend to give higher ratings, suggesting opportunities for personalized marketing.
 
-### Sales Questions
-Business questions based on sales that can be answered using SQL with the provided attributes:
-1. What is the total revenue generated by each branch?
-2. How does the quantity sold vary between regular and new customers?
-3. What is the distribution of sales by gender across different product lines?
-4. Which product line has the highest average unit price?
-5. How does the gross income vary between different branches?
-6. What is the average gross margin percentage for each city?
-7. Which branch has the highest total tax collected?
-8. How does the distribution of payment methods vary between product lines?
-9. What is the total revenue generated on a specific date?
-10. How does the gross margin percentage differ between member and normal customers?
-11. What is the average rating given by customers for each product line?
-12. How does the quantity sold vary throughout the day?
+---
 
-### Customer Questions
-Business questions that a customer can ask, which can be answered using SQL with the provided attributes:
-1. What is the total amount I spent on purchases within a specific time frame?
-2. Can you provide a breakdown of my purchases by product line?
-3. How much tax did I pay on my purchases?
-4. What is the average price per unit for the products I bought?
-5. Which payment method did I use most frequently for my purchases?
-6. What was the total cost of goods sold (COGS) for the products I purchased?
-7. What is the average gross margin percentage for the products I bought?
-8. Can you show me my purchase history sorted by date?
-9. How does my spending vary between different branches or cities?
-10. What was the highest and lowest rated purchase I made?
-11. How many units of each product did I purchase in total?
-12. Can you provide a summary of my purchases by customer type and gender?
-13. What are the total purchases, grouped by product line and tax percentage, and sorted by the total purchases?
-14. What is the total cost of goods sold (COGS) for each product line?
-These questions allow customers to gain insights into their purchasing behavior, expenditure patterns, product preferences, and overall satisfaction with their transactions. By leveraging SQL, these questions can be answered efficiently using the provided attributes.
+## **Business Applications**
+1. **Inventory Management**:
+   - Focus on high-revenue products to maximize profitability.
+2. **Marketing Strategies**:
+   - Tailor campaigns based on customer demographics and satisfaction levels.
+3. **Sales Forecasting**:
+   - Use revenue trends to predict future sales and adjust strategies accordingly.
 
-Overview:
-This script generates a README.md file providing insights gained from the "SQL-Driven Sales Performance Analysis: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data" project. The insights highlight the project's significance for sales professionals and its usefulness in optimizing sales strategies and driving revenue growth.
+---
 
-s
+## **How to Use This Repository**
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/walethewave/SQL-Driven-Sales-Performance-Analysis.git
+```
 
-## Overview
-The SQL-Driven Sales Performance Analysiss: Unveiling Consumer Behavior and Retail Trends through Supermarket Sales Data" project has provided valuable insights into consumer behavior, market trends, and sales performance. These insights are essential for sales professionals seeking to optimize sales strategies, improve customer satisfaction, and drive revenue growth in the competitive retail environment.
+### **2. Explore the SQL Scripts**
+- **Sales Data 101.sql**: Contains SQL queries for analyzing sales data.
+- **Sales Power BI Dashboard.pbix**: Power BI dashboard for visualizing insights.
 
-## Insights Gained
+### **3. Run the Queries**
+- Use a SQL client (e.g., MySQL, PostgreSQL) to execute the queries and analyze the results.
 
-1. **Identification of Top-Selling Products:**
-   - By analyzing sales data, the project identified the top-selling products based on revenue generated. This insight allows sales teams to prioritize inventory management, marketing efforts, and product promotions effectively.
+---
 
-2. **Trend Analysis of Monthly Revenue:**
-   - The project analyzed the trend of revenue over different months, providing insights into seasonal variations, consumer spending patterns, and overall sales performance. This information enables sales teams to anticipate demand fluctuations, adjust inventory levels accordingly, and capitalize on peak sales periods.
 
-3. **Customer Satisfaction Analysis by Gender and Customer Type:**
-   - By examining customer satisfaction ratings based on gender and customer type, the project uncovered insights into consumer preferences, satisfaction levels, and purchasing behavior. This insight empowers sales teams to tailor marketing strategies, product offerings, and customer experiences to specific demographic segments.
 
-4. **Optimization of Sales Strategies:**
-   - The insights gained from the project enable sales teams to optimize sales strategies, improve sales performance, and drive revenue growth. By leveraging data-driven insights, sales teams can make informed decisions, identify opportunities for growth, and mitigate risks effectively.
+---
 
-5. **Enhancement of Business Intelligence:**
-   - The project enhances business intelligence by providing actionable insights into consumer behavior, market trends, and competitive dynamics. This insight enables sales teams to adapt quickly to changing market conditions, capitalize on emerging trends, and stay ahead of the competition.
+## **Contributing**
+Feel free to contribute to this project by:
+- Reporting issues
+- Suggesting improvements
+- Submitting pull requests
 
-## Conclusion
-The SQL-Driven Sales Performance Analysis project demonstrates the power of data analytics in uncovering actionable insights, driving sales performance, and enhancing business success. By leveraging data-driven insights, sales professionals can optimize sales strategies, improve customer satisfaction, and achieve sustainable growth in today's competitive marketplace.
+---
 
-"""
+## **Contact**
+For questions or collaborations, reach out to me at Lekanolawale477@gmail.com or connect with me on [LinkedIn](https://www.linkedin.com/in/olawale-goodluck-691114255/).
+
